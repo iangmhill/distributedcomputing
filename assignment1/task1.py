@@ -9,11 +9,6 @@ class CountWords(Thread):
     files = listdir("./lib")
     print(files)
 
-
-
-    writeDict(hist)
-
-
   def writeDict(self, dict, out='out.txt'):
     f = open(out, 'w')
     for k in dict:
