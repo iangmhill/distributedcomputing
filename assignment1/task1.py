@@ -10,11 +10,16 @@ class CountWords(Thread):
     print(files)
 
 
-def writeDict(self, dict, out='out.txt'):
-  f = open(out, 'w')
-  for k in dict:
-    f.write("{}: {}\n\n".format(k, dict[k]))
-  f.close()
+
+    writeDict(hist)
+
+
+  def writeDict(self, dict, out='out.txt'):
+    f = open(out, 'w')
+    for k in dict:
+      f.write("{}: {}\n\n".format(k, dict[k]))
+    f.close()
+
 
 def main():
   word_counter = CountWords()
