@@ -17,8 +17,7 @@ class CountWords(Thread):
           for split_word in split_words:
             word = split_word.lower()
             hist[word] = hist.get(word, 0) + 1
-        print(hist)
-        return
+    self.writeDict(hist)
 
   def writeDict(self, dict, out='out.txt'):
     f = open(out, 'w')
