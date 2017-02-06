@@ -2,7 +2,7 @@
 
 ### Concepts discussed prior to implementation:
 - Programming language (python/java)
-- things
+- Generator objects (use `yield` to achieve distribution of lines)
 
 
 ### Concept References:
@@ -11,3 +11,7 @@
 
 
 ### Challenges Faced:
+- Distribution of load between threads
+- Detecting when computation is complete
+	-  Have all files been completely read?
+	-  Have all threads finished processing their final line?
