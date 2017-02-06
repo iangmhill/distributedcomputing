@@ -75,11 +75,15 @@ def main(num_threads = 10):
 if __name__ == '__main__':
   num_threads_data = []
   timing_data = []
-  for num_threads in range(1,5):
+  no_trials = 20
+  for num_threads in range(1,11):
     t = Timer('main({})'.format(num_threads), "from __main__ import main")
-    timed = t.timeit(10)/10
+    timed = t.timeit(no_trials)/no_trials
     num_threads_data.append(num_threads)
     timing_data.append(timed)
     print("{} threads: {}".format(num_threads, timed))
-  plt.plot(num_threads_data, timing_data)
+  plt.plot(num_threads_data, timing_data, 'ro--', markersize=7)
+  plt.title("Task2 Time Trials")
+  plt.xlabel("Thread Number")
+  plt.ylabel("Turn-around (average over {} trials in sec)".format(no_trials))
   plt.show()

@@ -26,12 +26,18 @@ Unlike Task1, Task2 bears the overhead burden of semaphores and the complete cop
 
 *Calculate the running time of task 2, using a varying number of threads. Start with a single
 thread, and keep increasing the number of threads till the running time doesn’t change
-(significantly).*
-
-
-
-
-*Create a plot to represent the varying running time with increased number of threads. Explain
+(significantly). Create a plot to represent the varying running time with increased number of threads. Explain
 your results.*
 
-![multithread runtimes plot](./Unknown.png "Multithread Runtimes Plot")
+![multithread runtimes plot](./time_test.png "Multithread Runtimes Plot")
+
+Using multiple threads in Python actually didn't end up helping the overall processing time of the files. In fact, the time required to schedule multiple threads is quite substantial (notice the 70% increase in time taken as thread count varies from 1 to 10). We believe that this is because Python only runs in *one process* using it's own scheduler, so the operating system scheduler cannot distribute the threads to the multiple cores in a machine. In essence, we have demonstrated multi-threading here, but not multiprocessing. 
+
+
+
+
+
+
+
+
+
