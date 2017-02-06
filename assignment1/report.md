@@ -17,8 +17,6 @@ Figuring out how to govern threads' access to the files was also an important ch
 *Compare the running time of your code in task 1 to that of thread 2 with a single thread. Explain
 your results.*
 
-0.19, 0.245
-
 `task1.py`: ~0.19 s
 `task2.py` (1 thread): ~0.25 s
 
