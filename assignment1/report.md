@@ -17,8 +17,12 @@ Figuring out how to govern threads' access to the files was also an important ch
 *Compare the running time of your code in task 1 to that of thread 2 with a single thread. Explain
 your results.*
 
+0.19, 0.245
 
+`task1.py`: ~0.19 s
+`task2.py` (1 thread): ~0.25 s
 
+The control code we have in task1.py is more lightweight than the code in task2.py due to the necessity of semaphores and the complete relogging of the thread's private histogram into the public one in the latter.
 
 *Calculate the running time of task 2, using a varying number of threads. Start with a single
 thread, and keep increasing the number of threads till the running time doesn’t change
@@ -30,4 +34,4 @@ thread, and keep increasing the number of threads till the running time doesn’
 *Create a plot to represent the varying running time with increased number of threads. Explain
 your results.*
 
-![multithread runtime plot](./plot.jpg "Optional Title")
+![multithread runtimes plot](./Unknown.png "Multithread Runtimes Plot")
