@@ -1,6 +1,7 @@
 from threading import Thread
 from os import listdir
 from re import sub, split
+from timeit import Timer
 
 class CountWords(Thread):
   def __init__(self):
@@ -28,6 +29,9 @@ class CountWords(Thread):
 def main():
   word_counter = CountWords()
   word_counter.start()
+  word_counter.join()
 
 if __name__ == '__main__':
-  main()
+  t = Timer('main()', "from __main__ import main")
+  timed = t.timeit(10)/10
+  print(timed)
